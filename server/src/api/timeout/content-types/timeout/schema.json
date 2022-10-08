@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "timeouts",
+  "info": {
+    "singularName": "timeout",
+    "pluralName": "timeouts",
+    "displayName": "timeout"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "count": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,731 @@
+@import './variables';
+
+// миксины
+@import './_mixins.scss';
+
+// обнуление стилей
+@import './reset.scss';
+
+// контейнер
+@import './container.scss';
+
+// оболочка
+@import './wrapper.scss';
+
+// контент
+@import './content.scss';
+
+// шрифты
+@import url('http://fonts.cdnfonts.com/css/alphakind');
+
+// глобальные стили
+@import './global.scss';
+
+.header {
+  background-image: url('./../assets/images/header-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include adaptiv-value(padding-top, 43, 14, 0);
+  @include adaptiv-value(padding-bottom, 167, 0, 0);
+  min-height: 1170px;
+
+  @include breakpoint(1024px) {
+    min-height: 800px;
+  }
+
+  @include breakpoint(768px) {
+    min-height: auto;
+    background-position: center -120px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .gull {
+    position: absolute;
+
+    @include breakpoint(1600px) {
+      display: none;
+    }
+
+    &1 {
+      top: 25%;
+      right: -10%;
+    }
+
+    &2 {
+      top: 10%;
+      left: 50%;
+    }
+
+    &3 {
+      top: 35%;
+      left: -15%;
+    }
+  }
+
+  // .header__top
+
+  &__top {
+    @include adaptiv-value(margin-bottom, 220, 170, 0);
+    align-items: end;
+
+    .mint {
+      button {
+        @include adaptiv-value(font-size, 24, 18, 0);
+        @include adaptiv-value(line-height, 29, 2, 0);
+        @include adaptiv-value(padding-left, 30, 15, 0);
+        @include adaptiv-value(padding-right, 30, 15, 0);
+
+        @include breakpoint(1024px) {
+          margin: 0 auto;
+        }
+  
+        @include breakpoint(768px) {
+          border: 4px solid #000;
+        }
+  
+    
+      }
+    }
+
+    .social {
+      li {
+        margin-right: 38px;
+        transition: transform 0.1s;
+
+        &:last-of-type {
+          margin-right: 0px;
+        }
+
+        &:hover {
+          transform: $transformScale;
+        }
+
+        a {
+          img {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+
+      .close{
+        display: none;
+        width: 35px;
+          height: 35px;
+          position: absolute;
+          top: 50px;
+          left: 40px;
+          
+        @include breakpoint(768px){
+          display: inline-block;
+        }
+
+        // .close__container
+
+        &__container{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        // .close__line
+
+        &__line{
+          position: absolute;
+          left: 0;
+          top: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #fff;
+
+            &:first-child{
+              transform: rotate(45deg);
+            }
+
+            &:last-child{
+              transform: rotate(-45deg);
+            }
+        }
+      }
+    }
+  }
+
+  // .header__bottom
+
+  &__bottom {
+  }
+
+  // .header__bottom-row
+
+  &__bottom-row {
+    gap: 100px;
+
+    @include breakpoint(1024px) {
+      display: block;
+    }
+  }
+
+  // .header__bottomColumn
+
+  &__bottomColumn {
+    &:first-child {
+      @include breakpoint(1024px) {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    &:last-child {
+    }
+
+    h1 {
+      @include adaptiv-value(max-width, 420, 220, 0);
+      @include adaptiv-value(margin-bottom, 20, 0, 0);
+
+      @include breakpoint(1024px) {
+        margin: 0 auto;
+      }
+    }
+
+    h2 {
+      font-size: 40px;
+      line-height: 49px;
+      margin-bottom: 10px;
+    }
+
+    .progressBar {
+      @include adaptiv-value(border-radius, 14, 7, 0);
+      @include adaptiv-value(height, 47, 26, 0);
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: #223f44;
+      border: 6px solid #000;
+      max-width: 420px;
+
+      @include breakpoint(1024px) {
+        margin: 0 auto;
+      }
+
+      @include breakpoint(768px) {
+        border: 4px solid #000;
+      }
+
+      div{
+        background: #f23d3d;
+        height: 100%;
+      }
+    }
+
+    .wallet-adapter-dropdown{
+      display: block;
+    }
+    
+    button {
+      max-width: 420px;
+      width: 100%;
+      @include adaptiv-value(font-size, 32, 18, 0);
+      @include adaptiv-value(line-height, 37, 2, 0);
+
+
+      @include breakpoint(1024px) {
+        margin: 0 auto;
+      }
+
+      @include breakpoint(768px) {
+        border: 4px solid #000;
+      }
+    }
+    .disabled{
+      display: none;
+    }
+  }
+
+  &__bottomColumnImg {
+    padding-top: 50px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    video{
+      border:$borderImg;
+      transform: perspective(1000px) rotateX(1.25deg) rotateY(-12.5deg) scaleX(1);
+      width: 350px;
+
+      @include breakpoint(1024px) {
+        display: none;
+      }
+    }
+    img {
+      width: 100%;
+        margin-top: -30px;
+        
+        @include breakpoint(1024px) {
+          position: absolute;
+          top: 70%;
+          right: -30%;
+          width: 200px;
+        }
+
+        @include breakpoint(768px) {
+          top: 50%;
+        }
+
+        @include breakpoint(425px) {
+          top: 43%;
+        }
+      }
+    }
+  
+}
+
+.about {
+  position: relative;
+  @include adaptiv-value('padding-top', 160, 100, 0);
+  @include adaptiv-value('padding-bottom', 20, 0, 0);
+
+  .fishes {
+    position: absolute;
+    z-index: -1;
+    max-width: 270px;
+
+    &:first-of-type {
+      top: 0;
+      right: 0;
+    }
+
+    &:last-of-type {
+      bottom: 600px;
+      left: 0;
+    }
+  }
+
+  h2 {
+    @include adaptiv-value('margin-bottom', 50, 15, 0);
+  }
+
+  p {
+    @include adaptiv-value('margin-bottom', 35, 15, 0);
+    color: #000;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  // .about__lines
+
+  &__lines {
+    @include adaptiv-value('margin-top', 185, 60, 0);
+
+    transform: rotate(-8.5deg);
+  }
+
+  // .about__line
+
+  &__line {
+    &:first-child {
+      transition: transform 8s linear;
+    }
+
+    &:last-child {
+      position: relative;
+      bottom: 70px;
+      transition: transform 7s linear;
+    }
+
+    div {
+      flex: 0 0 270px;
+      margin-right: 30px;
+
+      @include breakpoint(1024px) {
+        flex: 0 0 180px;
+      }
+
+      @include breakpoint(768px) {
+        flex: 0 0 120px;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      img {
+        border:$borderImg;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+.roadmap {
+  @include adaptiv-value('padding-top', 160, 100, 0);
+  position: relative;
+
+  .fishes {
+    position: absolute;
+
+    &:nth-child(1) {
+      right: 0;
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      left: 0;
+      top: 700px;
+    }
+
+    &:nth-child(3) {
+      right: 0;
+      bottom: 400px;
+    }
+
+    &:nth-child(4) {
+      left: 0;
+      bottom: -100px;
+    }
+  }
+
+  h2 {
+    @include adaptiv-value('margin-bottom', 20, 15, 0);
+  }
+
+  h3 {
+    @include adaptiv-value('margin-bottom', 120, 35, 0);
+    text-align: center;
+    color: #000;
+  }
+
+  // .roadmap__row
+
+  &__row {
+    position: relative;
+    row-gap: 20px;
+
+    @include breakpoint(1023px) {
+      display: block;
+      row-gap: 0;
+    }
+  }
+
+  // .roadmap__column
+
+  &__column {
+    @include breakpoint(1023px) {
+      margin-bottom: 150px;
+    }
+
+    @include breakpoint(768px) {
+      margin-bottom: 70px;
+    }
+
+    &--left {
+      text-align: start;
+      animation: 1.5s linear 0s infinite alternate roadmap-left;
+
+      @include breakpoint(1023px) {
+        text-align: center;
+        animation: none;
+      }
+
+      .roadmap__circle {
+        @include breakpoint(1023px) {
+          margin: 0 auto;
+          margin-bottom: 15px;
+        }
+        & + p {
+          padding-left: 20px;
+          transform: rotate(-10deg);
+
+          @include breakpoint(1023px) {
+            transform: rotate(0deg);
+            padding-left: 0px;
+          }
+        }
+      }
+    }
+
+    &--center {
+      animation: 2s linear 0s infinite alternate roadmap-center;
+
+      @include breakpoint(1023px) {
+        display: none;
+        animation: none;
+      }
+
+      img {
+        width: 150px;
+      }
+    }
+
+    &--right {
+      text-align: end;
+      animation: 1.5s linear 0s infinite alternate roadmap-right;
+
+      @include breakpoint(1023px) {
+        text-align: center;
+        animation: none;
+      }
+
+      .roadmap__circle {
+        margin-left: auto;
+
+        @include breakpoint(1023px) {
+          margin: 0 auto;
+          margin-bottom: 15px;
+        }
+
+        & + p {
+          padding-right: 20px;
+          transform: rotate(10deg);
+
+          @include breakpoint(1023px) {
+            padding-right: 0px;
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes roadmap-center {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(5%);
+    }
+  }
+
+  @keyframes roadmap-left {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(15%);
+    }
+  }
+
+  @keyframes roadmap-right {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(15%);
+    }
+  }
+
+  // .roadmap__circle
+
+  &__circle {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiv-value('width', 92, 64, 0);
+    @include adaptiv-value('height', 92, 64, 0);
+    box-shadow: -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000, 2px 0 0 #000, 2px 2px 0 #000,
+      0 2px 0 #000, -2px 2px 0 #000, -2px 0 0 #000, 2px 4px 0 #000, 1px 4px 0 #000, 0 4px 0 #000,
+      -1px 4px 0 #000, -2px 4px 0 #000;
+    border-radius: 100%;
+    @include adaptiv-value('font-size', 50, 36, 0);
+    @include adaptiv-value('line-height', 61, 49, 0);
+    color: #fff;
+
+    &--yellow {
+      background: #ffe83e;
+    }
+
+    &--blue {
+      background: #359cff;
+    }
+
+    &--red {
+      background: #f23d3d;
+    }
+
+    &--green {
+      background: #bbff58;
+    }
+
+    & + p {
+      @include adaptiv-value('font-size', 40, 36, 0);
+      @include adaptiv-value('line-height', 49, 39, 0);
+    }
+  }
+}
+
+.fishContainer {
+  background-image: url('./../assets/images/line.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 828px;
+  height: 100%;
+
+  @include breakpoint(1023px) {
+    display: none;
+  }
+
+  // .fishContainer__wrapper
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .fish-wrapper{
+      position: absolute;
+      top: 0;
+      left: 45%;
+      width: 150px;
+      transform: translate(0px, -45px);
+      transition: transform 0.05s linear;
+      animation: 0.5s linear 0s infinite alternate swimming-fish;
+      z-index: 1;
+
+      @include breakpoint(1440px) {
+        width: 130px;
+      }
+    }
+
+    .fish {
+      transition: transform 0.05s linear;
+    }
+
+    @keyframes swimming-fish {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 1%;
+      }
+    }
+
+    .bubbles {
+      position: absolute;
+      top: 50%;
+      opacity: 0;
+      transition: 2.5s linear;
+
+      @include breakpoint(1023px) {
+        display: none;
+      }
+
+      &--first {
+        left: 30%;
+      }
+
+      &--second {
+        right: 20%;
+      }
+
+      &--to-top {
+        top: 10%;
+      }
+
+      &--opacity {
+        transition: 3s linear;
+        opacity: 1;
+      }
+    }
+
+    .line {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.team {
+  @include adaptiv-value('padding-top', 160, 100, 0);
+  padding-bottom: 160px;
+  background-image: url('./../assets/images/lake.png');
+  background-size: cover;
+  text-align: center;
+
+  @include breakpoint(768px) {
+    background-image: url('./../assets/images/lake-small.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  h2 {
+    @include adaptiv-value('margin-bottom', 50, 65, 0);
+  }
+
+  // .team__row
+
+  &__row {
+    @include adaptiv-value('gap', 50, 70, 0);
+  }
+
+  // .team__column
+
+  &__column {
+    h3 {
+      @include adaptiv-value('font-size', 40, 35, 0);
+      @include adaptiv-value('line-height', 49, 43, 0);
+      @include adaptiv-value('margin-bottom', 30, 15, 0);
+    }
+
+    h4 {
+      @include adaptiv-value('font-size', 30, 28, 0);
+      @include adaptiv-value('line-height', 39, 34, 0);
+      @include adaptiv-value('margin-bottom', 15, 7, 0);
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  // .team__columnImg
+
+  &__columnImg {
+    max-width: 370px;
+    margin-bottom: 10px;
+    transform: rotate(-5deg);
+
+    @include breakpoint(768px) {
+      margin: 0 auto;
+    transform: none;
+    }
+
+    @include breakpoint(320px) {
+      width: 250px;
+        }
+
+    img {
+      border: $borderImg;
+      border-radius: 15px;
+    }
+  }
+}
+
+.footer {
+  padding: 20px 0px;
+  background: #715335;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+}

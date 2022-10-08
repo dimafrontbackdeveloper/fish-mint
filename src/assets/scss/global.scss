@@ -1,0 +1,97 @@
+@import './mixins';
+@import './variables';
+
+
+body{
+   font-style: normal;
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 29px;
+   font-family: 'Alphakind', sans-serif;
+   background: linear-gradient(180deg, #2F95D2 0%, #40ACE1 100%);
+   color:#fff;
+}
+
+.d-f{
+   display: flex;
+}
+
+.d-g{
+   display: grid;
+}
+
+.jc-sb{
+   justify-content: space-between;
+}
+
+.jc-c{
+   justify-content: center;
+}
+
+.fw-w{
+   flex-wrap: wrap;
+}
+
+.fw-nw{
+   flex-wrap: no-wrap;
+}
+
+.jc-e{
+   justify-content: end;
+}
+
+.ai-c{
+   align-items: center;
+}
+
+.fd-c{
+   flex-direction:column;
+}
+
+.fw-w{
+   flex-wrap: wrap;
+}
+
+
+.ta-c{
+   text-align: center;
+}
+
+.ta-e{
+   text-align: end;
+}
+
+.gtc-2{
+   grid-template-columns: repeat(2,1fr);
+}
+
+.gtc-3{
+   grid-template-columns: repeat(3,1fr);
+}
+
+.gtc-3-af{
+   grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
+}
+
+.gtc-4-af{
+   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.section{
+   padding: 160px 0px 50px 0px;
+}
+
+.title{
+   font-size: 70px;
+   line-height: 85px;
+   text-align: center;
+   -webkit-text-stroke:4px black; 
+}
+
+.fishes{
+   z-index: -1;
+}
+
+.text-border{
+   -webkit-text-stroke: 2.2px black; 
+}
